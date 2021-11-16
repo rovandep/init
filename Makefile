@@ -21,7 +21,7 @@ tidy:
 
 # Build the docker image
 docker-build:
-	docker build --no-cache . -f Dockerfile -t $(IMAGE)
+	docker build --no-cache . -f Dockerfile.ubi8 -t $(IMAGE)
 
 # Build the docker image with the extra kernel modules installation for Ubuntu
 docker-build-ubuntu:
