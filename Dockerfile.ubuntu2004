@@ -20,7 +20,8 @@ LABEL name="StorageOS Custom Init for Ubuntu Node Image" \
     description="StorageOS transforms commodity server or cloud based disk capacity into enterprise-class storage to run persistent workloads such as databases in containers. Provides high availability, low latency persistent block storage. No other hardware or software is required."
 
 RUN apt -y update && \
-    apt -y install kmod apt
+    apt -y install kmod apt && \
+    apt -y clean 
 
 COPY scripts/ /scripts
 COPY --from=build /go/src/github.com/storageos/init/LICENSE /licenses/
